@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>v-if v-show v-for命令</title>
+</head>
+<body>
+<div id="root">
+    <!-- v-if将dom这个属性创建或隐藏  v-show将dom这个属性展示或隐藏 -->
+    <div v-if="show">hello world</div>
+    <button @click="handleClick">tog</button>
+    <ul>
+        <!-- v-for循环内容的展示 -->
+        <li v-for="(item,index) of list" :key="index">{{item}}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el:"#root",
+        data:{
+            show:true,
+            list:[1,2,3]
+        },
+        methods:{
+            handleClick: function() {
+                this.show = !this.show;
+            }
+        }
+    })
+</script>
+</body>
+</html>

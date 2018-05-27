@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>创建地一个Vue实例</title>
+</head>
+<body>
+    <!-- 挂载点 -->
+    <div id="root">{{msg}}</div>
+    <script>
+        // dom元素与Vue实例相绑定
+       new Vue({
+           el: "#root",
+           data:{
+             msg:"hello world"
+           }
+})
+    </script>
+</body>
+</html>

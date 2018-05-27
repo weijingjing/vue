@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>挂载点，模板与实例</title>
+</head>
+<body>
+    <!-- div标签叫做Vue实例的挂载点 -->
+    <div id="root">
+        <!-- 模板templte -->
+        <h1>hello {{msg}}</h1>
+    </div>
+    <!-- Vue只会处理挂载点下面的内容 -->
+    <script>
+        // 实例
+      new Vue({
+        // 挂载点
+          el:"#root",
+          template:'<h1>hello {{msg}}</h1>',
+          data:{
+                msg:"hello world"
+              }
+      })
+    </script>
+</body>
+</html>

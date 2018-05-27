@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>vue实例中的数据 事件 方法</title>
+</head>
+<body>
+    <div id="root">
+        <!-- 插值表达式 -->
+        <h1>{{number}}</h1>
+        <h1 v-text="a"></h1>
+        <!-- 转义 -->
+        <h1 v-html="b"></h1>
+        </div>
+        <div id="home">
+        <!-- click事件 handleClick方法 -->
+        <div @click="handleClick">{{content}}</div>
+        <!-- 上面的是简写 -->
+        <!-- <div v-on:click="handleClick">{{content}}</div> -->
+    </div>
+    <script>
+     new Vue ({
+         el:"#root",
+         data:{
+             msg:"world",
+             number:123,
+             a:"hello",
+             b:"<h1>world</h1>"
+             }
+     })
+    </script>
+    <!-- vue是面向数据来编程，不是面向dom来编程 -->
+<script>
+     new Vue({
+         el:"#home",
+            data:{
+                 content:"hello"
+             },
+             methods:{
+                 handleClick:function(){
+                     this.content="world"
+                 }
+         }
+     })
+    </script>
+</body>
+</html>
